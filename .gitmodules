@@ -1,0 +1,3 @@
+[submodule "presentaciones/themes/reveal-hugo"]
+	path = presentaciones/themes/reveal-hugo
+	url = git@github.com:veggiemonk/reveal-hugo.git
