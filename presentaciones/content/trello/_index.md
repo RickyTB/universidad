@@ -106,3 +106,28 @@ Con Trello va a poder encontrar todo tipo de información como:
 
 <img data-src="/images/trello_app.png" height="520px">
 
+---
+
+## Esquema de precios
+
+<img data-src="/images/trello-precios.jpeg" height="520px">
+
+{{% note %}}
+Gratis, 10$ mensual en Business, Enterprise contacto con ventas.
+{{% /note %}}
+
+---
+
+## Conlusiones
+
+- {{% fragment %}} Trello es una herramienta que hace una cosa y la hace bien. {{% /fragment %}}
+- {{% fragment %}} Su fortaleza es la colaboración. {{% /fragment %}}
+- {{% fragment %}} La disciplina es lo más importante al momento de probar una nueva metodología. {{% /fragment %}}
+
+---
+
+{{< slide background-color="#245fc3" >}}
+
+<img data-src="/images/trello-logo.jpg">
+
+# Gracias
