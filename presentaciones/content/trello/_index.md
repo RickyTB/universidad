@@ -94,4 +94,15 @@ Con Trello va a poder encontrar todo tipo de información como:
 
 {{% fragment %}} **¡Trello es Multidispositivo!** {{% /fragment %}}
 
+---
+
+## Trello Web
+
+<img data-src="/images/trello-board.png" height="520px">
+
+---
+
+## Trello App
+
+<img data-src="/images/trello_app.png" height="520px">
 
