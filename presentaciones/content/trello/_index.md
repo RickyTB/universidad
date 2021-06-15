@@ -118,7 +118,7 @@ Gratis, 10$ mensual en Business, Enterprise contacto con ventas.
 
 ---
 
-## Conlusiones
+## Conclusiones
 
 - {{% fragment %}} Trello es una herramienta que hace una cosa y la hace bien. {{% /fragment %}}
 - {{% fragment %}} Su fortaleza es la colaboración. {{% /fragment %}}
