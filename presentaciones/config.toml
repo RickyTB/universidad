@@ -10,3 +10,13 @@ unsafe = true
 baseName = "index"
 mediaType = "text/html"
 isHTML = true
+
+[params.logo]
+src = "/images/common/logo-uce.png"
+top = "2%"
+left = "1%"
+
+[params.reveal_hugo]
+custom_theme = "uce-theme.scss"
+custom_theme_compile = true
+margin = 0.2

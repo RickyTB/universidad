@@ -35,7 +35,7 @@ Con Trello va a poder encontrar todo tipo de información como:
 
 ## Tablero de Trello
 
-![Ejemplo de tablero de trello](/images/trello-preview.png)
+![Ejemplo de tablero de trello](/images/trello/trello-preview.png)
 
 {{% /section %}}
 
@@ -44,7 +44,7 @@ Con Trello va a poder encontrar todo tipo de información como:
 {{< slide transition="fade" >}}
 ## FUNCIONALIDAD
 
-![Tableros de trello](/images/trello-boards.png)
+![Tableros de trello](/images/trello/trello-boards.png)
 <small>
 💡 Crea tableros con nombres descriptivos para un proyecto. Ejemplo: Por hacer, en proceso y listo.
 </small>
@@ -55,7 +55,7 @@ Con Trello va a poder encontrar todo tipo de información como:
 ## FUNCIONALIDAD
 
 <div class="r-hstack">
-  <img data-src="/images/trello-new-task.png" style="height: 50vh">
+  <img data-src="/images/trello/trello-new-task.png" style="height: 50vh">
   <div>
   <p>Las tarjetas pueden contener, entre otras cosas:</p>
   <ul>
@@ -75,15 +75,15 @@ Con Trello va a poder encontrar todo tipo de información como:
 
 <div style="display: grid; grid-gap: 1px; grid-template-columns: repeat(3, 1fr);">
   <div class="fragment fade">
-    <img data-src="/images/trello-new-board.png">
+    <img data-src="/images/trello/trello-new-board.png">
     <small>Crear diferentes proyectos (tableros).</small>
   </div>
   <div class="fragment fade">
-    <img data-src="/images/trello-visibility.png">
+    <img data-src="/images/trello/trello-visibility.png">
     <small>Crear proyectos públicos, privados o cooperativos.</small>
   </div>
   <div class="fragment fade">
-    <img data-src="/images/trello-invite.png">
+    <img data-src="/images/trello/trello-invite.png">
     <small>Trabajar con un equipo en tiempo real.</small>
   </div>
 </div>
@@ -98,19 +98,19 @@ Con Trello va a poder encontrar todo tipo de información como:
 
 ## Trello Web
 
-<img data-src="/images/trello-board.png" height="520px">
+<img data-src="/images/trello/trello-board.png" height="520px">
 
 ---
 
 ## Trello App
 
-<img data-src="/images/trello_app.png" height="520px">
+<img data-src="/images/trello/trello_app.png" height="520px">
 
 ---
 
 ## Esquema de precios
 
-<img data-src="/images/trello-precios.jpeg" height="520px">
+<img data-src="/images/trello/trello-precios.jpeg" height="520px">
 
 {{% note %}}
 Gratis, 10$ mensual en Business, Enterprise contacto con ventas.
@@ -128,6 +128,6 @@ Gratis, 10$ mensual en Business, Enterprise contacto con ventas.
 
 {{< slide background-color="#245fc3" >}}
 
-<img data-src="/images/trello-logo.jpg">
+<img data-src="/images/trello/trello-logo.jpg">
 
 # Gracias

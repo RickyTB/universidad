@@ -1,5 +1,5 @@
 +++
-title = "Trello | Gestión de Proyectos"
+title = "Presentaciones | Ricardo Baquero"
 outputs = ["Reveal"]
 [reveal_hugo]
 theme = "moon"
