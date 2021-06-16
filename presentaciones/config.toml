@@ -6,6 +6,9 @@ theme = "reveal-hugo"
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup.highlight]
+codeFences = false
+
 [outputFormats.Reveal]
 baseName = "index"
 mediaType = "text/html"
@@ -20,3 +23,4 @@ left = "1%"
 custom_theme = "uce-theme.scss"
 custom_theme_compile = true
 margin = 0.2
+highlight_theme = "night-owl"
