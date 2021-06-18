@@ -223,7 +223,7 @@ $ ./bin/hadoop dfs <comando> <opciones>
 
 <ul>Ejemplo: </ul>
 
-```toml
+```bash
 $ hdfs dfs –ls
 $ ./bin/hadoop dfs -ls 
 ```
@@ -246,15 +246,15 @@ Esquema URI como argumento
 <br>
 Notación:
 
-```toml
-escheme://authority/path
+```bash
+scheme://authority/path
 ```
-escheme HDFS: `hdfs`
+scheme HDFS: `hdfs`
 <br>
-escheme file system: `file`
+scheme file system: `file`
 
 Ejemplo: 
-```toml
+```bash
 hdfs dfs -mv file://sampleData/ejemplo/ejemplo.txt hdfs://ejemplo.com:8000/user/ejemplo/bloque_ejemplo.txt
 ```
 </ul>
@@ -286,7 +286,7 @@ el esquema lleva HDFS cuando esta en el HDFS o usa esquema file cuando es un arc
 
 Para apagar el HDFS se usa el siguiente comando: 
 
-```toml
+```bash
 $stop -dfs.sh 
 ```
 

@@ -142,9 +142,9 @@ $lineHalfSize: $lineSize / 2;
   bottom: 2px;
   left: 20px;
   right: 20px;
-  z-index: 120;
   @media print {
     bottom: 5px;
+    z-index: 120;
   }
 }
 
@@ -180,6 +180,8 @@ $lineHalfSize: $lineSize / 2;
   grid-template-columns: repeat(2, 1fr);
 }
 
-#logo {
-  z-index: 120;
+@media print {
+  #logo {
+    z-index: 120;
+  }
 }
