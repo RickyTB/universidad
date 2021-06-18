@@ -98,7 +98,6 @@ HDFS de Hadoop tiene dos componentes principales NameNode y el DataNodes los dos
 <ul>
 
 <img data-src="/images/hdfs/gnulinux-logo.png">
-
   <li>Maestro del modelo.</li>
   <li>Gestiona los DataNodes.</li>
   <li>Se conoce la descripción de los archivos almacenados.</li>
@@ -117,7 +116,6 @@ Se conoce la descripción de los archivos almacenados en los dataNodes, me refie
 <ul>
 
 <img data-src="/images/hdfs/gnulinux-logo.png">
-
   <li>Esclavos del modelo.</li>
   <li>Guarda la data.</li>
   <li>Peticiones del cliente.</li>
@@ -158,6 +156,8 @@ Lo que nos permite los bloques es poder ingresar todos los datos que se desean a
 
 {{% section %}}
 
+{{< slide transition="fade" >}}
+
 ## Replicación en HDFS
 <ul>
 <img data-src="/images/hdfs/replicacion1.PNG">
@@ -169,6 +169,8 @@ Para conocer como funciona la replicación vamos a ver las siguientes graficas, 
 
 ---
 
+{{< slide transition="fade" >}}
+
 <img data-src="/images/hdfs/replicacion2.png">
 
 {{%note%}}
@@ -177,6 +179,8 @@ Entonces el cliente quiere almacenar datos y se comunica con el nodo principal, 
 
 ---
 
+{{< slide transition="fade" >}}
+
 <img data-src="/images/hdfs/replicacion3.png">
 {{%note%}}
 Al ver que tiene todos los permisos permite comunica al cliente  y le da acceso para el almacenamiento 
@@ -184,12 +188,16 @@ Al ver que tiene todos los permisos permite comunica al cliente  y le da acceso 
 
 ---
 
+{{< slide transition="fade" >}}
+
 <img data-src="/images/hdfs/replicacion4.png">
 {{%note%}}
 El cliente puede ingresar sus datos los cuales es el bloque, y es almacenado en el primer rack en uno de sus nodos,
 {{%/note%}}
 
 ---
+
+{{< slide transition="fade" >}}
 
 <img data-src="/images/hdfs/replicacion5.png">
 {{%note%}}

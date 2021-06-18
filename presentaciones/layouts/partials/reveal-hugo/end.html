@@ -5,5 +5,7 @@
 
 {{- $subject_name := $.Param "subject_name" -}}
 {{- if $subject_name -}}
-<h6 class="uce-subject">{{ $subject_name }}</h6>
+<div class="uce-subject-container">
+	<h6 class="uce-subject">{{ $subject_name }}</h6>
+</div>
 {{- end -}}

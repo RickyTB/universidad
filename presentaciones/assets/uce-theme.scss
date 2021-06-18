@@ -137,14 +137,27 @@ $lineHalfSize: $lineSize / 2;
   color: #004a6f;
 }
 
+.uce-subject-container {
+  position: fixed;
+  bottom: 2px;
+  left: 20px;
+  right: 20px;
+  z-index: 120;
+  @media print {
+    bottom: 5px;
+  }
+}
+
 .uce-subject {
   font-size: 10rem;
   line-height: 1 !important;
   opacity: 0.1;
-  position: fixed;
-  bottom: 2px;
-  left: 20px;
   margin: 0 !important;
+  display: inline-block; // https://github.com/rikschennink/fitty#performance
+  white-space: nowrap;
+  @media print {
+    font-size: 7rem;
+  }
 }
 
 .reveal section img {
@@ -165,4 +178,8 @@ $lineHalfSize: $lineSize / 2;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
+}
+
+#logo {
+  z-index: 120;
 }
