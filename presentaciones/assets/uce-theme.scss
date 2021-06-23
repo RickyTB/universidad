@@ -38,7 +38,7 @@ $borderColor: $uceBlue;
 $backgroundColor: #fff;
 
 $mainColor: #363636;
-$headingColor: #141414;
+$headingColor: $uceBlue;
 
 $mainFontSize: 32px;
 $mainFont: "Roboto Slab", serif;
@@ -150,8 +150,9 @@ $lineHalfSize: $lineSize / 2;
 
 .uce-subject {
   font-size: 10rem;
+  //color: #000 !important;
   line-height: 1 !important;
-  opacity: 0.1;
+  opacity: 0.06;
   margin: 0 !important;
   display: inline-block; // https://github.com/rikschennink/fitty#performance
   white-space: nowrap;
@@ -184,4 +185,18 @@ $lineHalfSize: $lineSize / 2;
   #logo {
     z-index: 120;
   }
+}
+
+.reveal blockquote {
+  width: 80%;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  > p {
+    margin: 0;
+  }
+}
+
+.reveal h1 {
+  color: darken($uceBlue, 10%);
 }

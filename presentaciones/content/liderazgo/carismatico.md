@@ -90,14 +90,14 @@ Dueño de un magnetismo singular, aseguran que el carisma de Smith ayuda e inspi
 
 ### Frases de Fred Smith
 
-<small class="fragment">“El miedo a la derrota nunca debe ser la razón de no intentar algo nuevo”. </small>
+<blockquote class="fragment">“El miedo a la derrota nunca debe ser la razón de no intentar algo nuevo”. </blockquote>
 
-<small class="fragment">“Los líderes salen al frente y se quedan allí, elevando los estándares por los que se juzgan a sí mismos, y por el que están dispuestos a ser juzgados”. </small>
+<blockquote class="fragment">“Los líderes salen al frente y se quedan allí, elevando los estándares por los que se juzgan a sí mismos, y por el que están dispuestos a ser juzgados”. </blockquote>
 
-<small class="fragment">
-“Un gerente no es una persona que puede hacer el trabajo mejor que sus hombres, es una persona que puede hacer que sus hombres hagan un trabajo mejor que él”. </small>
+<blockquote class="fragment">
+“Un gerente no es una persona que puede hacer el trabajo mejor que sus hombres, es una persona que puede hacer que sus hombres hagan un trabajo mejor que él”. </blockquote>
 
-<small class="fragment">“La información sobre el paquete es tan importante como el propio paquete”. </small>
+<blockquote class="fragment">“La información sobre el paquete es tan importante como el propio paquete”. </blockquote>
 
 
 {{%note%}}
