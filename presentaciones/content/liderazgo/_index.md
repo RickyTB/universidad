@@ -5,7 +5,7 @@ subject_name = "Gestión de Proyectos"
 +++
 
 # Liderazgo
-### Caso 1
+### Caso Fedex
 ### Caso Bioshock Infinite
 
 Ricardo Baquero - Samantha Huaca

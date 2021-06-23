@@ -122,6 +122,4 @@ Fergusson was able to speak with Levine, figure out what the director wanted the
 	</div>
 </div>
 
----
 
-# Gracias por su atención
