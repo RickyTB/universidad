@@ -3,7 +3,7 @@
 
 ---
 
-## Historía
+## Historia
 ![Frederick ](/images/liderazgo/Frederick+W+Smith.png)
 Frederick W. Smith
 <ul>
@@ -17,7 +17,7 @@ Frederick W. Smith
 
 ---
 
-## Historía
+## Historia
 
 <ul>
 	<li>Discográfica Ardent.</li>
