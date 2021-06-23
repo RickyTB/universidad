@@ -5,5 +5,7 @@ subject_name = "Gestión de Proyectos"
 +++
 
 # Liderazgo
-## Caso 1 y Caso 2
-Ricardo Baquero y Samantha Huaca
+### Caso 1
+### Caso Bioshock Infinite
+
+Ricardo Baquero - Samantha Huaca
