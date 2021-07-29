@@ -1,0 +1,126 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wenneker Assignment
+% LaTeX Template
+% Version 2.0 (12/1/2019)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@LaTeXTemplates.com)
+% Frits Wenneker
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{scrartcl} % Font size
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\title{	
+	\normalfont\normalsize
+	\textsc{Universidad Central del Ecuador}
+
+	\textsc{Facultad de Ingeniería y Ciencias Aplicadas}
+
+	\textsc{Carrera de Ingeniería Informática}
+	\vspace{6pt} % Whitespace
+	\rule{\linewidth}{0.5pt}\\ % Thin top horizontal rule
+	\vspace{20pt} % Whitespace
+	{\huge Las Data Class y su uso en las Apps}\\ % The assignment title
+	\vspace{12pt} % Whitespace
+	\rule{\linewidth}{2pt}\\ % Thick bottom horizontal rule
+	\vspace{12pt} % Whitespace
+}
+
+\author{\LARGE Nelson Ricardo Baquero} % Your name
+
+\date{\normalsize\today} % Today's date (\today) or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	FIGURE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+\section{¿Cuántos constructores puede tener una data class?}
+
+Tiene un constructor principal donde se puede definir valores predeterminados para las variables.
+
+\begin{lstlisting}
+data class Person(val name: String, val age: Int)
+\end{lstlisting}
+
+Se pueden definir también constructores secundarios que tomen variables arbitrarias, con la condición que siempre deben delegarse al contructor principal.
+
+\begin{lstlisting}
+data class Person(val name: String) {
+    constructor(name: String, age: Int) : this(name)
+}
+\end{lstlisting}
+
+Además, si trabaja en un proyecto con compatibilidad con java, es posible especificar la anotación \textbf{@JvmOverloads} para generar varios constructores en bitecode que puedan ser utilizados por código Java.
+
+\begin{lstlisting}
+data class Person @JvmOverloads constructor(val name: String, 
+                                            val age: Int? = 0)
+\end{lstlisting}
+
+%------------------------------------------------
+
+\section{Numere las ventajas que tienen las data class sobre las clases regulares}
+
+\begin{enumerate}
+	\item Requiere escribir mucho menos código por parte del programador.
+	\item Son inmutables, lo que significa que comprobar la igualidad en dos instancias con el mismo contenido siempre retornará \emph{verdadero}.
+	\item Posee varias utilidades basadas en su contenido: equals(), toString(), componentN(), copy().
+\end{enumerate}
+
+\section{¿Cuáles son las limitaciones que tienen en la programación orientada a objetos?}
+
+\begin{itemize}
+	\item Las data classes no pueden ser marcadas como: abstract, sealed, open o inner.
+	\item Los constructores de las data classes siempre deben recibir al menos un parámetro.
+\end{itemize}
+
+\section{¿Qué son las destructuring declarations y cómo funcionan?}
+
+Las \emph{destructuring declarations} sirven para declarar múltiples variables al mismo tiempo. Es especialmente útil para ahorrar tiempo al escribir las declaraciones de variables que posee un objeto intermedio.
+
+\begin{lstlisting}
+val (name, age) = person
+\end{lstlisting}
+
+Ejemplo, retornar dos variables desde una función y utilizar una \emph{destructuring declaration}' para obtenerlas:
+
+\begin{lstlisting}
+data class Result(val result: Int, val status: Status)
+fun function(...): Result {
+    // codigo
+    return Result(result, status)
+}
+
+// Para utilizar la funcion y destructurar el resultado:
+val (result, status) = function(...)
+\end{lstlisting}
+
+\section{Cree una data class como ejemplo}
+
+\begin{figure}[h] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=\columnwidth]{data_class.png} % Example image
+	\caption{Ejemplo de data class en Kotlin}
+\end{figure}
+
+\end{document}
