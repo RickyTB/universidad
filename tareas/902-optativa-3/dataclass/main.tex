@@ -62,7 +62,7 @@ Tiene un constructor principal donde se puede definir valores predeterminados pa
 data class Person(val name: String, val age: Int)
 \end{lstlisting}
 
-Se pueden definir también constructores secundarios que tomen variables arbitrarias, con la condición que siempre deben delegarse al contructor principal.
+Se pueden definir también constructores secundarios que tomen variables arbitrarias, con la condición que siempre deben delegarse al constructor principal.
 
 \begin{lstlisting}
 data class Person(val name: String) {
@@ -70,7 +70,7 @@ data class Person(val name: String) {
 }
 \end{lstlisting}
 
-Además, si trabaja en un proyecto con compatibilidad con java, es posible especificar la anotación \textbf{@JvmOverloads} para generar varios constructores en bitecode que puedan ser utilizados por código Java.
+Además, si trabaja en un proyecto con compatibilidad con java, es posible especificar la anotación \textbf{@JvmOverloads} para generar varios constructores en bytecode que puedan ser utilizados por código Java.
 
 \begin{lstlisting}
 data class Person @JvmOverloads constructor(val name: String, 
@@ -102,7 +102,7 @@ Las \emph{destructuring declarations} sirven para declarar múltiples variables 
 val (name, age) = person
 \end{lstlisting}
 
-Ejemplo, retornar dos variables desde una función y utilizar una \emph{destructuring declaration}' para obtenerlas:
+Ejemplo, retornar dos variables desde una función y utilizar una \emph{destructuring declaration} para obtenerlas:
 
 \begin{lstlisting}
 data class Result(val result: Int, val status: Status)
