@@ -77,7 +77,7 @@ Crear un archivo llamado \emph{etcd-install.sh} con las siguientes instrucciones
 	\label{lst:install-script}
 \end{listing}
 
-Finalmente, otorgarle permiso de ejecución {\mintinline{bash}{chmod +x etcd-install.sh}
+Finalmente, otorgarle permiso de ejecución \mintinline{bash}{chmod +x etcd-install.sh}
 
 \subsection{Ejecutar el script}
 
@@ -93,132 +93,96 @@ Si la instalación resultó exitosa, ya es posible levantar el servidor.
 
 \subsection{Desplegar el servidor ETCD}
 
-A woodchuck can ingest 361.92 cm\textsuperscript{3} (22.09 cu in) of wood per day. Assuming immediate expulsion on ingestion with a 5\% retainment rate, a woodchuck could chuck \textbf{343.82 cm\textsuperscript{3}} of wood per day.
+Para desplegar el servidor, basta con ejecutar el binario (etcd):
 
-%------------------------------------------------
+\begin{listing}[H]
+	\begin{minted}[frame=lines]{bash}
+$ ETCD_BIN=/tmp/test-etcd
+$ $ETCD_BIN/etcd
+	\end{minted}
+	\caption{Ejecución del binario.}
+	\label{lst:execution}
+\end{listing}
 
-\paragraph{Bonus: suppose there is no woodchuck.}
+\subsection{Asignación de atributos clave/valor}
 
-Fusce varius orci ac magna dapibus porttitor. In tempor leo a neque bibendum sollicitudin. Nulla pretium fermentum nisi, eget sodales magna facilisis eu. Praesent aliquet nulla ut bibendum lacinia. Donec vel mauris vulputate, commodo ligula ut, egestas orci. Suspendisse commodo odio sed hendrerit lobortis. Donec finibus eros erat, vel ornare enim mattis et.
+Finalmente, para agregar atributos clave/valor, se debe iniciar otra sesión de terminal y ejecutar el siguiente comando:
 
-%----------------------------------------------------------------------------------------
-%	EQUATION EXAMPLES
-%----------------------------------------------------------------------------------------
+\begin{listing}[H]
+	\begin{minted}[frame=lines]{bash}
+$ $ETCD_BIN/etcdctl put [clave] [valor]
+	\end{minted}
+	\caption{Ingreso de un nuevo atributo.}
+	\label{lst:input}
+\end{listing}
 
-\section{Interpreting Equations}
+Para obtener un valor a partir de su clave en la misma terminal, ejecutar el siguiente comando:
 
-\subsection{Identify the author of Equation \ref{eq:bayes} below and briefly describe it in English.}
+\begin{listing}[H]
+	\begin{minted}[frame=lines]{bash}
+$ $ETCD_BIN/etcdctl get [clave]
+	\end{minted}
+	\caption{Obtención de un atributo.}
+	\label{lst:output}
+\end{listing}
 
-\begin{align}
-	\label{eq:bayes}
-	\begin{split}
-		P(A|B) = \frac{P(B|A)P(A)}{P(B)}
-	\end{split}
-\end{align}
+\section{Configuración en Java}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus, imperdiet urna iaculis, mattis eros. Pellentesque iaculis odio vel nisl ullamcorper, nec faucibus ipsum molestie. Sed dictum nisl non aliquet porttitor. Etiam vulputate arcu dignissim, finibus sem et, viverra nisl. Aenean luctus congue massa, ut laoreet metus ornare in. Nunc fermentum nisi imperdiet lectus tincidunt vestibulum at ac elit. Nulla mattis nisl eu malesuada suscipit.
+Utilizaremos un proyecto con Gradle como gestor de dependencias.
 
-%------------------------------------------------
+\subsection{Agregar las dependencias necesarias}
 
-\subsection{Try to make sense of some more equations.}
+Se debe agregar las siguientes dependencias:
 
-\begin{align}
-	\begin{split}
-		(x+y)^3 &= (x+y)^2(x+y)\\
-		&=(x^2+2xy+y^2)(x+y)\\
-		&=(x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3)\\
-		&=x^3+3x^2y+3xy^2+y^3
-	\end{split}
-\end{align}
+\begin{figure}[h] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=1\columnwidth]{dependencies.png} % Example image
+	\caption{Sección de dependencias en build.gradle}
+\end{figure}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-\begin{align}
-	A =
-	\begin{bmatrix}
-		A_{11} & A_{21} \\
-		A_{21} & A_{22}
-	\end{bmatrix}
-\end{align}
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Además, debido a la antigüedad de una dependencia de la librería de configuración, se debe forzar a gradle a utilizar una versión anterior de la dependencia utilizando el siguiente código:
 
-%----------------------------------------------------------------------------------------
-%	LIST EXAMPLES
-%----------------------------------------------------------------------------------------
+\begin{figure}[h] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=1\columnwidth]{force.png} % Example image
+	\caption{Sección de configuración en build.gradle}
+\end{figure}
 
-\section{Viewing Lists}
+\subsection{Crear un archivo de configuración para ETCD}
 
-\subsection{Bullet Point List}
+El archivo debe tener como nombre \mintinline{bash}{microprofile-config.properties} y estar ubicado en el directorio \mintinline{bash}{META-INF} del proyecto.
 
-\begin{itemize}
-	\item First item in a list
-	      \begin{itemize}
-		      \item First item in a list
-		            \begin{itemize}
-			            \item First item in a list
-			            \item Second item in a list
-		            \end{itemize}
-		      \item Second item in a list
-	      \end{itemize}
-	\item Second item in a list
-\end{itemize}
+Dentro del archivo se pueden colocar opciones de configuración como host, puerto, activar o desactivar, etre otras opciones.
 
-%------------------------------------------------
+\subsection{Utilizar los atributos de ETCD en el código}
 
-\subsection{Numbered List}
+Podemos utilizar CDI para inyectar los atributos. Por lo tanto necesitamos anotar la clase con un ámbito y anotar la propiedad que deseemos inyectar.
 
-\begin{enumerate}
-	\item First item in a list
-	\item Second item in a list
-	\item Third item in a list
-\end{enumerate}
+\begin{listing}[H]
+	\begin{minted}[frame=lines,numbers=left]{java}
+@ApplicationScoped // Anotación de ámbito
+@Path("/")
+public class HolaMundoRest {
 
-%----------------------------------------------------------------------------------------
-%	TABLE EXAMPLE
-%----------------------------------------------------------------------------------------
+  @Inject  // Anotación para inyectar una propiedad.
+  @ConfigProperty(name = "app.mensaje2") // Anotación con la propiedad ETCD
+  private String msg;
 
-\section{Interpreting a Table}
+  @GET
+  @Path("/hola")
+  public String hola() {
 
-\begin{table}[h] % [h] forces the table to be output where it is defined in the code (it suppresses floating)
-	\centering % Centre the table
-	\begin{tabular}{l l l}
-		\toprule
-		\textit{Per 50g} & \textbf{Pork} & \textbf{Soy} \\
-		\midrule
-		Energy           & 760kJ         & 538kJ        \\
-		Protein          & 7.0g          & 9.3g         \\
-		Carbohydrate     & 0.0g          & 4.9g         \\
-		Fat              & 16.8g         & 9.1g         \\
-		Sodium           & 0.4g          & 0.4g         \\
-		Fibre            & 0.0g          & 1.4g         \\
-		\bottomrule
-	\end{tabular}
-	\caption{Sausage nutrition.}
-\end{table}
+    // Config providers
+    ConfigProvider.getConfig().getConfigSources().forEach(s -> {
+      System.out.printf("%3d: %s\n", s.getOrdinal(), s.getName());
+    });
 
-%------------------------------------------------
-
-\subsection{The table above shows the nutritional consistencies of two sausage types. Explain their relative differences given what you know about daily adult nutritional recommendations.}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus, imperdiet urna iaculis, mattis eros. Pellentesque iaculis odio vel nisl ullamcorper, nec faucibus ipsum molestie. Sed dictum nisl non aliquet porttitor. Etiam vulputate arcu dignissim, finibus sem et, viverra nisl. Aenean luctus congue massa, ut laoreet metus ornare in. Nunc fermentum nisi imperdiet lectus tincidunt vestibulum at ac elit. Nulla mattis nisl eu malesuada suscipit.
-
-%----------------------------------------------------------------------------------------
-%	CODE LISTING EXAMPLE
-%----------------------------------------------------------------------------------------
-
-\section{Reading a Code Listing}
-
-%------------------------------------------------
-
-\subsection{How many luftballons will be output by the Listing \ref{lst:luftballons} above?}
-
-Aliquam arcu turpis, ultrices sed luctus ac, vehicula id metus. Morbi eu feugiat velit, et tempus augue. Proin ac mattis tortor. Donec tincidunt, ante rhoncus luctus semper, arcu lorem lobortis justo, nec convallis ante quam quis lectus. Aenean tincidunt sodales massa, et hendrerit tellus mattis ac. Sed non pretium nibh. Donec cursus maximus luctus. Vivamus lobortis eros et massa porta porttitor.
-
-%------------------------------------------------
-
-\subsection{Identify the regular expression in Listing \ref{lst:luftballons} and explain how it relates to the anti-war sentiments found in the rest of the script.}
-
-Fusce varius orci ac magna dapibus porttitor. In tempor leo a neque bibendum sollicitudin. Nulla pretium fermentum nisi, eget sodales magna facilisis eu. Praesent aliquet nulla ut bibendum lacinia. Donec vel mauris vulputate, commodo ligula ut, egestas orci. Suspendisse commodo odio sed hendrerit lobortis. Donec finibus eros erat, vel ornare enim mattis et.
-
-%----------------------------------------------------------------------------------------
+    return String.format("%s %s", msg, LocalDateTime.now());
+  }
+}
+	\end{minted}
+	\caption{Ejemplo de Hola Mundo utilizando configuración de ETCD.}
+	\label{lst:java}
+\end{listing}
 
 \end{document}
